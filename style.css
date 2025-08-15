@@ -1,0 +1,586 @@
+body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+/* Header 基本樣式 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* 確保導覽列在最上層 */
+}
+
+.logo {
+    height: 36px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 36px 8px 12px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ff5a1f;
+    /* 焦點時的邊框效果 */
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    font-size: 16px;
+    color: #888;
+}
+
+.head-info {
+    background-color: #e3f1ff;
+    border: 1px solid rgb(87, 166, 255);
+    padding: 5px 20px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin: 10px 0px;
+}
+
+.head-info i {
+    color: rgb(87, 166, 255);
+    padding-right: 8px;
+    font-size: 14px;
+}
+
+
+
+/* 右側功能區 */
+.header-right {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.header-right a,
+.header-right button {
+    margin-left: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+.header-right a:hover,
+.header-right button:hover {
+    color: #ff5a1f;
+}
+
+/* 登入按鈕 */
+.login-btn {
+    background-color: #ff5a1f !important;
+    color: white !important;
+    border-radius: 20px;
+    padding: 6px 16px;
+}
+
+/* 下拉選單 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    margin-left: 15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    min-width: 120px;
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 漢堡選單按鈕（預設隱藏） */
+.menu-toggle {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ======== 主內容區 ======== */
+.main {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+/* 側邊欄 (Sidebar) */
+.sidebar {
+    width: 280px;
+    padding: 0px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 使用者資訊區塊 */
+.user-profile {
+    padding: 20px;
+    text-align: center;
+}
+
+.user-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    display: inline-block;
+    box-shadow: 0 1px 3px #333;
+}
+
+.user-profile h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.user-profile p {
+    font-size: 14px;
+    color: #888;
+    margin: 0 0 10px;
+}
+
+.user-profile .level {
+    display: inline-block;
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #666;
+}
+
+.user-profile .level i {
+    color: #ff5a1f;
+    margin-right: 5px;
+}
+
+/* 側邊欄清單 */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 側邊欄清單項目 */
+.sidebar ul li {
+    padding: 10px 20px;
+    /* 增加左右 padding */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* 移除最後一個項目的底線 */
+.sidebar ul li:last-child {
+    border-bottom: none;
+}
+
+.sidebar ul li:hover {
+    background-color: #f7f7f7;
+    /* 滑鼠懸停效果 */
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* 讓連結佔滿空間 */
+    color: #333;
+    text-decoration: none;
+}
+
+/* 側邊欄連結圖示 */
+.sidebar ul li a i {
+    margin-right: 10px;
+    color: #888;
+    width: 18px;
+    /* 固定圖示寬度，防止對齊跑掉 */
+    text-align: center;
+}
+
+/* 新增的分隔線樣式 */
+.sidebar ul li.separator {
+    padding-top: 20px;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    /* 上方增加分隔線 */
+}
+
+/* 側邊欄優惠圖片區塊 */
+.li-img {
+    margin-top: 20px;
+    width: 280px;
+}
+
+.li-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* 圖片圓角 */
+    cursor: pointer;
+}
+
+/* 內容區 */
+.content {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(90deg, #7b71ff, #7d1aff);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.banner-text h2 {
+    color: white;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.banner-text ul {
+    position: relative;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.banner-text li {
+    position: relative;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.banner img {
+    height: 80px;
+}
+
+/* 自訂 li 的項目符號 */
+.banner-text li::before {
+    content: "\2022";
+    /* 使用 Unicode 圓點 */
+    color: #ffdf77;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    /* 讓子元素垂直排列 */
+    align-items: center;
+    /* 水平置中 */
+    margin-left: 20px;
+    /* 與左側文字保持距離 */
+    text-align: center;
+    /* 文字置中 */
+}
+
+.qr-container img {
+    height: 80px;
+    border-radius: 10px;
+}
+
+.qr-container p {
+    font-size: 12px;
+    color: white;
+}
+
+.highlight {
+    color: #ffdf77;
+}
+
+/* 我的最愛 */
+.favorites {
+    margin-bottom: 30px;
+}
+
+.favorites h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.favorites-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.favorites-card:hover {
+    transform: translateY(-2px);
+}
+
+.favorites-card img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.favorites-info {
+    padding: 10px;
+}
+
+.favorites-info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 6px;
+}
+
+.favorites-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* 行程推薦區塊 */
+.recommend {
+    margin-top: 20px;
+}
+
+.recommend h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.tab {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #fff;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.tab.active {
+    background-color: #ff5a1f;
+    color: #fff;
+    border-color: #ff5a1f;
+}
+
+.recommend-list {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.recommend-list.active-content {
+    display: grid;
+}
+
+.recommend-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.recommend-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recommend-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.recommend-card .info {
+    padding: 10px;
+}
+
+.recommend-card .info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.recommend-card .info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 頁腳 */
+.footer {
+    max-width: 1200px;
+    margin: 40px auto 20px;
+    padding: 20px 10px;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 修正：為圖標容器新增 Flexbox 屬性，讓圖標可以水平排列並有間距 */
+.footer .social-icons {
+    display: flex;
+    gap: 10px;
+    /* 圖標之間的間距 */
+}
+
+.footer .social-icons a {
+    color: #888;
+    font-size: 18px;
+}
+
+.footer .social-icons a:hover {
+    color: #ff5a1f;
+}
+
+/* RWD 手機版 */
+@media (max-width: 768px) {
+    .header-center {
+        display: none;
+        /* 手機版先隱藏搜尋框，可改成另外顯示在下方 */
+    }
+
+    .header-right {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .header-right.active {
+        display: flex;
+    }
+
+    .header-right a,
+    .header-right button,
+    .dropdown-btn {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        /* 手機版顯示漢堡按鈕 */
+    }
+
+    .main {
+        flex-direction: column;
+        /* 將側邊欄和內容垂直堆疊 */
+    }
+
+    .sidebar,
+    .sid {
+        /* 將側邊欄寬度設為 100% */
+        width: 100%;
+        margin-bottom: 20px;
+        /* 增加間距 */
+    }
+
+    .li-img {
+        width: 100%;
+    }
+
+    .banner {
+        flex-direction: column;
+        /* Banner 內容垂直堆疊 */
+        text-align: center;
+    }
+
+    .qr-container {
+        margin: 20px 0 0 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer p {
+        margin-bottom: 10px;
+        /* 文字與圖標間距 */
+        text-align: center;
+    }
+}

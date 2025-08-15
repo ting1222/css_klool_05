@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klook 我的最愛</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="work.js">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+    <div class="page-container">
+        <header class="header">
+            <!-- 左側 Logo -->
+            <div class="header-left"><a href="work.html">
+                    <img src="img/klook_logo.png" alt="Klook Logo" class="logo"></a>
+            </div>
+            <!-- 中間 搜尋框 -->
+            <div class="header-center">
+                <input type="text" placeholder="探索全球目的地 / 活動" class="search-input">
+                <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+
+            <!-- 漢堡按鈕（手機版） -->
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
+            <!-- 右側 功能選單區塊 -->
+            <nav class="header-right" id="header-right">
+                <!-- 語言下拉選單 -->
+                <div class="dropdown">
+                    <!-- 設定 ID 以便 JavaScript 抓取元素 -->
+                    <button class="dropdown-btn" id="language-btn">繁 ▾</button>
+                    <!-- 修正：將 id 加到 dropdown-content 這個 div 上 -->
+                    <div class="dropdown-content" id="language-dropdown">
+                        <!-- 設定 data-value 以便 JavaScript 抓取點擊的值 -->
+                        <a href="#" data-value="繁">繁體中文</a>
+                        <a href="#" data-value="简">简体中文</a>
+                        <a href="#" data-value="EN">English</a>
+                    </div>
+
+                </div>
+
+                <!-- 幣別下拉選單 -->
+                <div class="dropdown">
+                    <!-- 設定 ID 以便 JavaScript 抓取元素 -->
+                    <button class="dropdown-btn" id="currency-btn">TWD ▾</button>
+                    <!-- 修正：將 id 加到 dropdown-content 這個 div 上 -->
+                    <div class="dropdown-content" id="currency-dropdown">
+                        <!-- 設定 data-value 以便 JavaScript 抓取點擊的值 -->
+                        <a href="#" data-value="TWD">TWD 新台幣</a>
+                        <a href="#" data-value="USD">USD 美元</a>
+                        <a href="#" data-value="JPY">JPY 日圓</a>
+                    </div>
+                </div>
+
+                <a href="#">打開 App</a>
+                <a href="#">客服中心</a>
+                <a href="#">最近逛過</a>
+                <a href="#">購物車</a>
+                <button class="login-btn">登入</button>
+            </nav>
+        </header>
+        <!-- 最上方info -->
+        <section class="head-info">
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>新增居住地資訊，探索玩樂世界更輕鬆！</span>
+            </p>
+            <!-- 箭頭圖示，使用 ml-auto 讓其靠右對齊 -->
+            <i class="fa-solid fa-arrow-right ml-auto"></i>
+        </section>
+        <!-- ======== 主內容區塊 ======== -->
+        <main class="main">
+
+            <!-- 左側側邊欄 -->
+            <aside class="sid">
+                <aside class="sidebar">
+                    <!-- 使用者大頭貼與資訊區塊 -->
+                    <div class="user-profile">
+                        <img src="https://placehold.co/80x80/E0E0E0/808080?text=Avatar" alt="User Avatar">
+                        <h4>Klook 用戶</h4>
+                        <p>管理個人資料 ></p>
+                        <div class="level">
+                            <i class="fa-solid fa-star"></i>
+                            <span>Lv.1 領航員</span>
+                        </div>
+                    </div>
+
+                    <!-- 側邊欄主選單 -->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-ticket"></i>
+                                <span>可用優惠碼</span>
+                            </a>
+                            <span>查看</span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-wallet"></i>
+                                <span>Klook 酷幣</span>
+                            </a>
+                            <span>查看</span>
+                        </li>
+                        <li class="separator">
+                            <a href="#">
+                                <i class="fa-solid fa-receipt"></i>
+                                <span>訂單</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-comment"></i>
+                                <span>我的評價</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-credit-card"></i>
+                                <span>管理付款方式</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <span>管理旅客資料</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>管理宅配資料</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>我的最愛</span>
+                            </a>
+                        </li>
+                        <li class="separator">
+                            <a href="#">
+                                <i class="fa-solid fa-address-card"></i>
+                                <span>管理登入方式</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-gear"></i>
+                                <span>帳戶設定</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </aside>
+                <div class="li-img">
+                    <img src="img/img01.png" alt="查看詳情">
+                </div>
+            </aside>
+            <!-- 右側主內容區塊 -->
+            <section class="content">
+                <!-- 頂部宣傳 Banner -->
+                <div class="banner">
+                    <div class="banner-text">
+                        <h2>打開 App 體驗 <span class="highlight">我的最愛</span> 完整功能</h2>
+                        <ul>
+                            <li>依自己喜好建立收藏夾，規劃行程更輕鬆</li>
+                            <li>隨時隨地跟好友分享你的收藏</li>
+                            <li>輕鬆整理收藏品，規劃行程更簡單</li>
+                        </ul>
+                    </div>
+                    <!-- QR Code 區塊 -->
+                    <div class="qr-container">
+                        <img src="img/QRcode.png" alt="QR Code">
+                        <p>掃碼下載App</p>
+                    </div>
+                </div>
+
+                <!-- 我的最愛清單 -->
+                <div class="favorites">
+                    <h3>我的最愛</h3>
+                    <div class="favorites-card">
+                        <img src="https://placehold.co/120x80/282828/FFF?text=Image" alt="Favorite">
+                        <div class="favorites-info">
+                            <h4>體驗館 - 鯨豚生態探索館</h4>
+                            <p>NT$ 300 起</p>
+                        </div>
+                    </div>
+                    <div class="favorites-card">
+                        <img src="https://placehold.co/120x80/282828/FFF?text=Image" alt="Favorite">
+                        <div class="favorites-info">
+                            <h4>體驗館 - 豪華飯店</h4>
+                            <p>NT$ 1,600 起</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 行程推薦區塊 -->
+                <div class="recommend">
+                    <h3>從我的最愛自動生成旅遊行程推薦</h3>
+                    <!-- 日期切換頁籤 -->
+                    <div class="tabs">
+                        <!-- 為每個頁籤新增 data-tab 屬性 -->
+                        <div class="tab active" data-tab="day1">1日遊</div>
+                        <div class="tab" data-tab="day3">3日遊</div>
+                        <div class="tab" data-tab="day5">5日遊</div>
+                    </div>
+
+                    <!-- 推薦行程卡片列表 -->
+                    <!-- 預設顯示一日遊，因此加上 active-content 類別 -->
+                    <div class="recommend-list active-content" data-content="day1">
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+1+Trip+1" alt="Trip 1">
+                            <div class="info">
+                                <h4>一日遊 - 海洋世界</h4>
+                                <p>NT$ 220 起</p>
+                            </div>
+                        </div>
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+1+Trip+2" alt="Trip 2">
+                            <div class="info">
+                                <h4>一日遊 - 豪華飯店</h4>
+                                <p>NT$ 1,600 起</p>
+                            </div>
+                        </div>
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+1+Trip+3" alt="Trip 3">
+                            <div class="info">
+                                <h4>一日遊 - 戶外探險</h4>
+                                <p>NT$ 800 起</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommend-list" data-content="day3">
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+3+Trip+1" alt="Trip 1">
+                            <div class="info">
+                                <h4>三日遊 - 城市探索</h4>
+                                <p>NT$ 3,500 起</p>
+                            </div>
+                        </div>
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+3+Trip+2" alt="Trip 2">
+                            <div class="info">
+                                <h4>三日遊 - 自然景觀</h4>
+                                <p>NT$ 4,200 起</p>
+                            </div>
+                        </div>
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+3+Trip+3" alt="Trip 3">
+                            <div class="info">
+                                <h4>三日遊 - 美食之旅</h4>
+                                <p>NT$ 2,800 起</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommend-list" data-content="day5">
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+5+Trip+1" alt="Trip 1">
+                            <div class="info">
+                                <h4>五日遊 - 環島旅行</h4>
+                                <p>NT$ 8,000 起</p>
+                            </div>
+                        </div>
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+5+Trip+2" alt="Trip 2">
+                            <div class="info">
+                                <h4>五日遊 - 文化體驗</h4>
+                                <p>NT$ 7,500 起</p>
+                            </div>
+                        </div>
+                        <div class="recommend-card">
+                            <img src="https://placehold.co/250x150/282828/FFF?text=Day+5+Trip+3" alt="Trip 3">
+                            <div class="info">
+                                <h4>五日遊 - 自駕遊</h4>
+                                <p>NT$ 9,000 起</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- 頁面底部 -->
+    <footer class="footer">
+        <p>&copy; 2014-2025 Klook. All Rights Reserved. 旅遊產品由客遊天下旅行社有限公司負責提供 旅行業註冊編號：交觀甲第800500號 品保協會會員編號：北2297號
+            統一編號：52477053 代表人姓名：王志豪 其他產品由客遊天下玩樂股份有限公司負責提供 統一編號：83513625 聯繫地址：臺北市松山區長安東路2段225號C棟3樓 聯繫電話：886(02)66097896
+            專線服務時間：週一至週五10:00 - 19:00</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <script>
+        // JavaScript 程式碼區塊
+
+        // 手機漢堡選單控制
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('header-right').classList.toggle('active');
+        });
+
+        // 頁籤切換邏輯
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.recommend-list');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                // 移除所有頁籤和內容的 active 狀態
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active-content'));
+
+                // 為被點擊的頁籤新增 active 狀態
+                this.classList.add('active');
+
+                // 根據被點擊的頁籤，顯示對應的內容
+                const tabId = this.getAttribute('data-tab');
+                const targetContent = document.querySelector(`.recommend-list[data-content="${tabId}"]`);
+                if (targetContent) {
+                    targetContent.classList.add('active-content');
+                }
+            });
+        });
+
+        // 下拉選單控制
+        function setupDropdown(buttonId, dropdownId) {
+            const button = document.getElementById(buttonId);
+            const dropdownContent = document.getElementById(dropdownId);
+
+            if (!button || !dropdownContent) {
+                console.error('找不到下拉選單元素！');
+                return;
+            }
+
+            // 點擊按鈕時，切換選單的顯示/隱藏
+            button.addEventListener('click', function (e) {
+                e.stopPropagation(); // 阻止事件冒泡，避免點擊按鈕時立刻觸發 window 的點擊事件
+                // 關閉其他開啟的下拉選單
+                document.querySelectorAll('.dropdown-content.active-dropdown').forEach(openDropdown => {
+                    if (openDropdown !== dropdownContent) {
+                        openDropdown.classList.remove('active-dropdown');
+                    }
+                });
+                // 切換當前選單的顯示狀態
+                dropdownContent.classList.toggle('active-dropdown');
+            });
+
+            // 點擊選單內的連結時，更新按鈕文字並隱藏選單
+            const links = dropdownContent.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation(); // 阻止事件冒泡
+                    const value = this.getAttribute('data-value');
+                    button.textContent = `${value} ▾`;
+                    dropdownContent.classList.remove('active-dropdown'); // 隱藏選單
+                });
+            });
+        }
+
+        // 點擊頁面其他地方時，隱藏所有下拉選單
+        window.addEventListener('click', function (e) {
+            // 檢查點擊的目標是否在任何一個下拉選單或其按鈕內部
+            const isClickInsideDropdown = e.target.closest('.dropdown');
+            if (!isClickInsideDropdown) {
+                document.querySelectorAll('.dropdown-content.active-dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active-dropdown');
+                });
+            }
+        });
+
+        // 呼叫函式來設定每個下拉選單
+        setupDropdown('language-btn', 'language-dropdown');
+        setupDropdown('currency-btn', 'currency-dropdown');
+    </script>
+</body>
+
+</html>
